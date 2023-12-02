@@ -5,16 +5,14 @@ import {withAuthenticator} from "@aws-amplify/ui-react";
 import "@aws-amplify/ui-react/styles.css";
 import "@/lib/amplify/config"
 
-interface AmplifyConfiguratorProps {
+interface AmplifyAuthProviderProps {
     children: React.ReactNode;
 }
 
-function AmplifyConfigurator({children}: AmplifyConfiguratorProps) {
+function AmplifyProvider({children}: AmplifyAuthProviderProps) {
     return (
-        <>
-            {children}
-        </>
+        <>{children}</>
     );
 }
 
-export default withAuthenticator(AmplifyConfigurator);
+export default withAuthenticator(AmplifyProvider);

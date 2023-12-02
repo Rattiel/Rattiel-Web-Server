@@ -1,8 +1,10 @@
-import React from 'react';
+import React from "react";
 
 function Page() {
     return (
-        <>테스트</>
+        <>
+            메인 페이지
+        </>
     )
 }
 
