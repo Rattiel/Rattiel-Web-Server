@@ -10,7 +10,7 @@ const defaultTheme = createTheme({
         fontFamily: GoogleInterFont.style.fontFamily,
         body1: {fontFamily: GoogleInterFont.style.fontFamily},
         body2: {fontFamily: GoogleInterFont.style.fontFamily},
-    },
+    }
 });
 
 export default defaultTheme;

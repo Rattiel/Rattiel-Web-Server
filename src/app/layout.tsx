@@ -1,14 +1,16 @@
+import {Metadata} from "next";
 import React from "react";
+import ConsoleLayout from "@/components/ui/ConsoleLayout";
 import AmplifyProvider from "@/lib/amplify/AmplifyProvider";
 import ThemeRegistry from "@/lib/mui/ThemeRegistry";
 import "@/lib/amplify/config";
 
-export const metadata = {
+const metadata: Metadata = {
     title: 'GrepFa',
     description: 'GrepFa',
 }
 
-export interface RootLayoutProps {
+interface RootLayoutProps {
     children: React.ReactNode
 }
 
@@ -18,7 +20,9 @@ function RootLayout({children}: RootLayoutProps) {
         <body>
         <AmplifyProvider>
             <ThemeRegistry>
-                {children}
+                <ConsoleLayout>
+                    {children}
+                </ConsoleLayout>
             </ThemeRegistry>
         </AmplifyProvider>
         </body>
@@ -27,3 +31,4 @@ function RootLayout({children}: RootLayoutProps) {
 }
 
 export default RootLayout;
+export {metadata};

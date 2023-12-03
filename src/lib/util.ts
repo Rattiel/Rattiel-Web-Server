@@ -4,14 +4,14 @@ import {CognitoUserSession} from "amazon-cognito-identity-js";
 const Debug = process.env.NEXT_PUBLIC_DEBUG;
 const ApiServer = process.env.NEXT_PUBLIC_API_SERVER_ENDPOINT;
 
-export interface AuthorizedFetchProps {
+interface AuthorizedFetchProps {
     url: string;
     body?: any;
     headers?: Record<string, string> | undefined
     method?: "GET" | "POST" | "PUT" | "DELETE";
 }
 
-export default async function ApiRequest({url, body, headers, method}: AuthorizedFetchProps): Promise<Response> {
+async function ApiRequest({url, body, headers, method}: AuthorizedFetchProps): Promise<Response> {
     let session: CognitoUserSession;
     try {
         session = await Auth.currentSession();
@@ -27,10 +27,7 @@ export default async function ApiRequest({url, body, headers, method}: Authorize
             method: method ?? "POST",
             headers: {
                 "Authorization": `Bearer ${session.getIdToken().getJwtToken()}`,
-                ...headers,
-                ...(headers == undefined && {
-                    "Content-Type": "application/json"
-                })
+                ...headers
             },
             body: body
         }
@@ -48,6 +45,7 @@ class NotAuthorizedError extends Error {
     }
 }
 
+export default ApiRequest;
 export {
     NotAuthorizedError,
     DataFetcher

@@ -1,10 +1,11 @@
+"use client";
+
 import React from "react";
+import FileCollection from "@/components/FileCollection";
 
 function Page() {
     return (
-        <>
-            메인 페이지
-        </>
+        <FileCollection/>
     )
 }
 

@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@aws-amplify/ui-react": "^5.0.4",
+    "@aws-sdk/client-s3": "^3.465.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.0",
@@ -22,6 +23,7 @@
     "aws-amplify": "^5.3.4",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.10",
+    "moment": "^2.29.4",
     "next": "13.4.10",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -31,6 +33,5 @@
   "main": "index.js",
   "repository": "git@github.com:Rattiel/rattiel-web-server.git",
   "license": "MIT",
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
